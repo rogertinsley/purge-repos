@@ -13,9 +13,7 @@ namespace purge_repos
                 Credentials = new Credentials("username", "password")
             };
 
-            var allForCurrent = client.Repository.GetAllForCurrent().Result;
-
-            var repos = allForCurrent
+            var repos = client.Repository.GetAllForCurrent().Result
                 .Where(current => current.Name.Equals("repository-name"))
                 .ToList();
 
